@@ -171,10 +171,10 @@ function animateCoins(coins) {
             setTimeout(() => {
                 // 根据结果切换图片
                 if (coins[index] === 2) {
-                    coinImg.src = 'images/coin-qianlong-front.svg';  // 正面（字）
+                    coinImg.src = 'coin-qianlong-front.svg';  // 正面（字）
                     coinImg.alt = '乾隆通宝-正面';
                 } else {
-                    coinImg.src = 'images/coin-qianlong-back.svg';   // 背面
+                    coinImg.src = 'coin-qianlong-back.svg';   // 背面
                     coinImg.alt = '乾隆通宝-背面';
                 }
                 
