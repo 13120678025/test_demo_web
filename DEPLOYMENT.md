@@ -22,7 +22,6 @@ yijin1.0/
 ├── README.md                     # 项目说明
 ├── README_CONFIG.md              # 配置说明
 ├── .gitignore                    # Git忽略文件
-└── images/                       # 图片文件夹
     ├── coin-qianlong-front.svg
     ├── coin-qianlong-back.svg
     └── ...其他图片
@@ -184,3 +183,4 @@ fetch('/api/ai-analysis', {...})
 ---
 
 **祝部署顺利！** 🚀
+
