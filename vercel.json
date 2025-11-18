@@ -1,37 +1,10 @@
 {
-  "version": 2,
-  "name": "yijing-divination",
-  "builds": [
+  "rewrites": [
     {
-      "src": "**/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "**/*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "**/*.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "images/**",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/index.html"
     }
   ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "DEEPSEEK_API_KEY": "@deepseek-api-key"
-  },
   "headers": [
     {
       "source": "/(.*)",
