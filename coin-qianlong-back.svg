@@ -1,0 +1,112 @@
+<svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背面金属渐变（稍暗）-->
+    <radialGradient id="bronzeBack" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#E6D4A0;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#D4B525;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#B89520;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B6914;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- 满文渐变 -->
+    <linearGradient id="manchu" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B4423;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4E342E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2C1810;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 高光 -->
+    <radialGradient id="shineBack" cx="25%" cy="25%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:0.8" />
+      <stop offset="40%" style="stop-color:#E6D4A0;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- 阴影 -->
+    <filter id="depthBack">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 文字凸起 -->
+    <filter id="embossBack">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="0.8"/>
+      <feSpecularLighting in="SourceAlpha" surfaceScale="4" specularConstant="0.9" specularExponent="18" lighting-color="#E6D4A0">
+        <fePointLight x="-5000" y="-5000" z="7000"/>
+      </feSpecularLighting>
+      <feComposite in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+  </defs>
+  
+  <!-- 外圆主体 -->
+  <circle cx="70" cy="70" r="66" fill="url(#bronzeBack)" filter="url(#depthBack)"/>
+  
+  <!-- 外圈装饰 -->
+  <circle cx="70" cy="70" r="66" fill="none" stroke="#8B6914" stroke-width="2" opacity="0.8"/>
+  <circle cx="70" cy="70" r="63" fill="none" stroke="#D4B525" stroke-width="1" opacity="0.5"/>
+  <circle cx="70" cy="70" r="60" fill="none" stroke="#B89520" stroke-width="0.5" opacity="0.4"/>
+  
+  <!-- 齿纹 -->
+  <circle cx="70" cy="70" r="58" fill="none" stroke="#6B4423" stroke-width="0.8" opacity="0.3" stroke-dasharray="2.5,2.5"/>
+  
+  <!-- 中心方孔 -->
+  <rect x="50" y="50" width="40" height="40" rx="3" fill="#14100C" stroke="#5A4024" stroke-width="2.5"/>
+  <rect x="51" y="51" width="38" height="38" rx="2.5" fill="#080604" opacity="0.9"/>
+  <rect x="52" y="52" width="36" height="36" rx="2" fill="none" stroke="#000000" stroke-width="0.8" opacity="0.6"/>
+  
+  <!-- 满文"宝" - 左侧 -->
+  <g filter="url(#embossBack)">
+    <path d="M 23 65 Q 23 55 28 55 Q 33 55 33 65 L 33 85 Q 33 90 28 90 Q 23 90 23 85 Z" 
+          fill="url(#manchu)" stroke="#4E342E" stroke-width="0.5"/>
+    <circle cx="28" cy="75" r="2" fill="url(#manchu)"/>
+  </g>
+  
+  <!-- 满文 - 右侧 -->
+  <g filter="url(#embossBack)">
+    <path d="M 107 65 Q 107 55 112 55 Q 117 55 117 65 L 117 85 Q 117 90 112 90 Q 107 90 107 85 Z" 
+          fill="url(#manchu)" stroke="#4E342E" stroke-width="0.5"/>
+    <line x1="112" y1="60" x2="112" y2="80" stroke="url(#manchu)" stroke-width="1.5"/>
+  </g>
+  
+  <!-- 装饰纹理 - 四方位 -->
+  <g opacity="0.3">
+    <!-- 上方装饰 -->
+    <rect x="65" y="18" width="10" height="10" rx="1" fill="none" stroke="#B89520" stroke-width="0.8"/>
+    <!-- 下方装饰 -->
+    <rect x="65" y="112" width="10" height="10" rx="1" fill="none" stroke="#B89520" stroke-width="0.8"/>
+    <!-- 左侧装饰 -->
+    <circle cx="20" cy="70" r="3" fill="none" stroke="#B89520" stroke-width="0.8"/>
+    <!-- 右侧装饰 -->
+    <circle cx="120" cy="70" r="3" fill="none" stroke="#B89520" stroke-width="0.8"/>
+  </g>
+  
+  <!-- 对角装饰线 -->
+  <path d="M 28 28 L 42 42" stroke="#D4B525" stroke-width="0.8" opacity="0.3"/>
+  <path d="M 112 28 L 98 42" stroke="#D4B525" stroke-width="0.8" opacity="0.3"/>
+  <path d="M 28 112 L 42 98" stroke="#D4B525" stroke-width="0.8" opacity="0.3"/>
+  <path d="M 112 112 L 98 98" stroke="#D4B525" stroke-width="0.8" opacity="0.3"/>
+  
+  <!-- 中心环形纹理 -->
+  <circle cx="70" cy="70" r="48" fill="none" stroke="#B89520" stroke-width="0.4" opacity="0.25" stroke-dasharray="3,3"/>
+  <circle cx="70" cy="70" r="44" fill="none" stroke="#8B6914" stroke-width="0.4" opacity="0.2" stroke-dasharray="2,2"/>
+  
+  <!-- 高光效果 -->
+  <ellipse cx="45" cy="45" rx="22" ry="18" fill="url(#shineBack)" opacity="0.6"/>
+  
+  <!-- 外圈高光 -->
+  <path d="M 15 35 A 60 60 0 0 1 105 15" fill="none" stroke="#F5E6D3" stroke-width="2.5" opacity="0.35" stroke-linecap="round"/>
+  
+  <!-- 锈迹纹理 -->
+  <circle cx="30" cy="100" r="3.5" fill="#6B4423" opacity="0.15"/>
+  <circle cx="110" cy="110" r="3" fill="#5A4024" opacity="0.13"/>
+  <circle cx="100" cy="25" r="2.5" fill="#6B4423" opacity="0.11"/>
+  <ellipse cx="55" cy="115" rx="4" ry="2.5" fill="#4E342E" opacity="0.1"/>
+</svg>

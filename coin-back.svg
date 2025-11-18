@@ -1,0 +1,54 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="coinGradientBack" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#E6BE8A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9A779;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A67C52;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="innerGradientBack" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF8DC;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#C9A779;stop-opacity:0" />
+    </radialGradient>
+    <filter id="shadowBack">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 外圆 - 铜钱主体（背面稍暗） -->
+  <circle cx="50" cy="50" r="48" fill="url(#coinGradientBack)" filter="url(#shadowBack)" stroke="#7A5C3D" stroke-width="1"/>
+  
+  <!-- 内圆边缘 -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#A67C52" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- 中心方孔 -->
+  <rect x="35" y="35" width="30" height="30" fill="#1A1410" stroke="#7A5C3D" stroke-width="1.5"/>
+  
+  <!-- 高光效果 -->
+  <ellipse cx="35" cy="35" rx="12" ry="8" fill="url(#innerGradientBack)" opacity="0.5"/>
+  
+  <!-- 背面纹理线条 - 上 -->
+  <path d="M 25 25 Q 50 20 75 25" fill="none" stroke="#8B7355" stroke-width="0.8" opacity="0.4"/>
+  
+  <!-- 背面纹理线条 - 下 -->
+  <path d="M 25 75 Q 50 80 75 75" fill="none" stroke="#8B7355" stroke-width="0.8" opacity="0.4"/>
+  
+  <!-- 背面纹理线条 - 左 -->
+  <path d="M 25 25 Q 20 50 25 75" fill="none" stroke="#8B7355" stroke-width="0.8" opacity="0.4"/>
+  
+  <!-- 背面纹理线条 - 右 -->
+  <path d="M 75 25 Q 80 50 75 75" fill="none" stroke="#8B7355" stroke-width="0.8" opacity="0.4"/>
+  
+  <!-- 外圈装饰纹理 -->
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#A67C52" stroke-width="0.3" opacity="0.3" stroke-dasharray="2,2"/>
+  
+  <!-- 边缘细节 -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="#5C4A3A" stroke-width="0.5" opacity="0.4"/>
+</svg>

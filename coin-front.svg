@@ -1,0 +1,48 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="coinGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="innerGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF8DC;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:0" />
+    </radialGradient>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 外圆 - 铜钱主体 -->
+  <circle cx="50" cy="50" r="48" fill="url(#coinGradient)" filter="url(#shadow)" stroke="#8B6914" stroke-width="1"/>
+  
+  <!-- 内圆边缘 -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#B8860B" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- 中心方孔 -->
+  <rect x="35" y="35" width="30" height="30" fill="#2C1810" stroke="#8B6914" stroke-width="1.5"/>
+  
+  <!-- 高光效果 -->
+  <ellipse cx="35" cy="35" rx="12" ry="8" fill="url(#innerGradient)" opacity="0.6"/>
+  
+  <!-- 字纹理 - 左侧 -->
+  <text x="22" y="55" font-family="SimSun, STSong, serif" font-size="14" font-weight="bold" fill="#8B4513" text-anchor="middle">康</text>
+  
+  <!-- 字纹理 - 右侧 -->
+  <text x="78" y="55" font-family="SimSun, STSong, serif" font-size="14" font-weight="bold" fill="#8B4513" text-anchor="middle">熙</text>
+  
+  <!-- 外圈装饰纹理 -->
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#B8860B" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
+  
+  <!-- 边缘细节 -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="#654321" stroke-width="0.5" opacity="0.4"/>
+</svg>
