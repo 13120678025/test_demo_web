@@ -1,0 +1,226 @@
+/* ========== 宇宙神秘背景增强层 ========== */
+
+/* 流星动画层 */
+.meteor-shower {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.meteor {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    opacity: 0;
+    animation: meteor-fall linear infinite;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+
+.meteor:nth-child(1) {
+    left: 10%;
+    top: -100px;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.meteor:nth-child(2) {
+    left: 30%;
+    top: -100px;
+    animation-duration: 2.5s;
+    animation-delay: 5s;
+}
+
+.meteor:nth-child(3) {
+    left: 50%;
+    top: -100px;
+    animation-duration: 3.2s;
+    animation-delay: 8s;
+}
+
+.meteor:nth-child(4) {
+    left: 70%;
+    top: -100px;
+    animation-duration: 2.8s;
+    animation-delay: 11s;
+}
+
+.meteor:nth-child(5) {
+    left: 85%;
+    top: -100px;
+    animation-duration: 3.5s;
+    animation-delay: 14s;
+}
+
+@keyframes meteor-fall {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0) rotate(45deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(100px) rotate(45deg);
+    }
+}
+
+/* 神秘占卜符号层 */
+.mystic-symbols {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.symbol {
+    position: absolute;
+    font-size: 40px;
+    color: rgba(255, 215, 0, 0.08);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+    animation: symbol-float linear infinite;
+    opacity: 0;
+}
+
+/* 八卦符号 */
+.symbol:nth-child(1) { content: '☰'; left: 5%; top: 15%; animation-duration: 25s; animation-delay: 0s; }
+.symbol:nth-child(2) { content: '☱'; left: 15%; top: 60%; animation-duration: 30s; animation-delay: 3s; }
+.symbol:nth-child(3) { content: '☲'; left: 85%; top: 25%; animation-duration: 28s; animation-delay: 6s; }
+.symbol:nth-child(4) { content: '☳'; left: 75%; top: 70%; animation-duration: 32s; animation-delay: 9s; }
+.symbol:nth-child(5) { content: '☴'; left: 45%; top: 10%; animation-duration: 27s; animation-delay: 12s; }
+.symbol:nth-child(6) { content: '☵'; left: 25%; top: 85%; animation-duration: 29s; animation-delay: 15s; }
+.symbol:nth-child(7) { content: '☶'; left: 65%; top: 50%; animation-duration: 31s; animation-delay: 18s; }
+.symbol:nth-child(8) { content: '☷'; left: 90%; top: 80%; animation-duration: 26s; animation-delay: 21s; }
+
+/* 太极符号 */
+.symbol:nth-child(9) { content: '☯'; left: 10%; top: 40%; animation-duration: 35s; animation-delay: 5s; font-size: 50px; }
+.symbol:nth-child(10) { content: '☯'; left: 80%; top: 45%; animation-duration: 38s; animation-delay: 12s; font-size: 45px; }
+
+/* 星座符号 */
+.symbol:nth-child(11) { content: '♈'; left: 20%; top: 20%; animation-duration: 33s; animation-delay: 8s; font-size: 35px; color: rgba(138, 43, 226, 0.1); }
+.symbol:nth-child(12) { content: '♉'; left: 70%; top: 15%; animation-duration: 34s; animation-delay: 14s; font-size: 35px; color: rgba(65, 105, 225, 0.1); }
+.symbol:nth-child(13) { content: '♊'; left: 35%; top: 75%; animation-duration: 36s; animation-delay: 20s; font-size: 35px; color: rgba(219, 112, 147, 0.1); }
+.symbol:nth-child(14) { content: '♋'; left: 55%; top: 85%; animation-duration: 37s; animation-delay: 26s; font-size: 35px; color: rgba(72, 209, 204, 0.1); }
+
+/* 神秘符文 */
+.symbol:nth-child(15) { content: '⚝'; left: 12%; top: 50%; animation-duration: 40s; animation-delay: 10s; font-size: 42px; }
+.symbol:nth-child(16) { content: '✦'; left: 88%; top: 35%; animation-duration: 38s; animation-delay: 16s; font-size: 38px; }
+.symbol:nth-child(17) { content: '✧'; left: 40%; top: 30%; animation-duration: 36s; animation-delay: 22s; font-size: 40px; }
+.symbol:nth-child(18) { content: '✵'; left: 60%; top: 65%; animation-duration: 42s; animation-delay: 28s; font-size: 36px; }
+
+@keyframes symbol-float {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-50px) rotate(180deg);
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotate(360deg);
+    }
+}
+
+/* 星座连线图案 */
+.constellation {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.constellation svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.06;
+}
+
+.constellation-line {
+    stroke: rgba(173, 216, 230, 0.3);
+    stroke-width: 1;
+    fill: none;
+    stroke-dasharray: 5,5;
+    animation: constellation-glow 8s ease-in-out infinite;
+}
+
+.constellation-star {
+    fill: rgba(255, 255, 255, 0.6);
+    animation: star-pulse 3s ease-in-out infinite;
+}
+
+@keyframes constellation-glow {
+    0%, 100% {
+        opacity: 0.3;
+        stroke-width: 1;
+    }
+    50% {
+        opacity: 0.7;
+        stroke-width: 1.5;
+    }
+}
+
+@keyframes star-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        r: 2;
+    }
+    50% {
+        opacity: 1;
+        r: 3;
+    }
+}
+
+/* 深空光晕效果 */
+.deep-space-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background: 
+        radial-gradient(circle 400px at 25% 30%, rgba(138, 43, 226, 0.03), transparent),
+        radial-gradient(circle 300px at 75% 70%, rgba(255, 140, 0, 0.03), transparent),
+        radial-gradient(circle 500px at 50% 50%, rgba(65, 105, 225, 0.02), transparent);
+    animation: deep-glow 30s ease-in-out infinite;
+}
+
+@keyframes deep-glow {
+    0%, 100% {
+        opacity: 0.5;
+        filter: blur(40px);
+    }
+    50% {
+        opacity: 0.8;
+        filter: blur(60px);
+    }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .symbol {
+        font-size: 30px;
+    }
+    
+    .meteor {
+        height: 60px;
+    }
+    
+    .constellation {
+        opacity: 0.03;
+    }
+}

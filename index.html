@@ -3,273 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI老白的答案之书</title>
-    <!-- Tailwind CSS v3 -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        answerText: '#F9DBB3',
-                        buttonBg: '#1C1C1C',
-                        explanationText: '#FFFFFF'
-                    },
-                    fontFamily: {
-                        song: ['SimSun', 'STSong', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-shadow {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
-            .text-shadow-lg {
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-            }
-            .btn-hover {
-                @apply transition-all duration-300 hover:bg-opacity-80 hover:scale-105 hover:shadow-lg;
-            }
-        }
-    </style>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: 'SimSun', 'STSong', serif;
-        }
-        
-        .canvas-container {
-            position: relative;
-            width: 380px;
-            height: 700px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .canvas-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://img.alicdn.com/imgextra/i3/O1CN01FSw38T1Ne6L2mg3Mb_!!6000000001594-2-tps-936-1200.png');
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
-        
-        .answer-content {
-            position: absolute;
-            top: 44px;
-            left: 32px;
-            width: 300px;
-            height: 190px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .answer-text {
-            font-family: 'SimSun', 'STSong', serif;
-            font-size: 60px;
-            line-height: 65px;
-            color: #F9DBB3;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-align: left;
-        }
-        
-        .explanation-text {
-            position: absolute;
-            top: 190px;
-            left: 0;
-            width: 300px;
-            font-family: 'SimSun', 'STSong', serif;
-            font-size: 16px;
-            line-height: 26px;
-            color: #FFFFFF;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            text-align: left;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .answer-button {
-            position: absolute;
-            bottom: 16px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 32px;
-            background-color: #1C1C1C;
-            color: white;
-            border: none;
-            border-radius: 16px;
-            font-family: 'SimSun', 'STSong', serif;
-            font-size: 16px;
-            cursor: pointer;
-            z-index: 3;
-            transition: all 0.3s ease;
-        }
-        
-        .answer-button:hover {
-            background-color: rgba(28, 28, 28, 0.8);
-            transform: translateX(-50%) scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .fade-in {
-            opacity: 1 !important;
-        }
-        
-        .fade-out {
-            opacity: 0 !important;
-        }
-        
-        @keyframes pulse {
-            0% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.05); }
-            100% { transform: translateX(-50%) scale(1); }
-        }
-        
-        .pulse {
-            animation: pulse 1s infinite;
-        }
-    </style>
+    <title>易经占卜 - 传统智慧的现代呈现</title>
+    <link rel="stylesheet" href="styles-apple-mystical.css">
+    <link rel="stylesheet" href="hero-apple.css">
+    <link rel="stylesheet" href="cosmic-bg.css">
 </head>
 <body>
-    <div class="canvas-container">
-        <div class="canvas-bg"></div>
-        <div class="answer-content" id="answerContent">
-            <div class="answer-text" id="answerText"></div>
-            <div class="explanation-text" id="explanationText">遇到问题、犹豫不决时，试试拿走这个简单的答案或暗示。</div>
-        </div>
-        <button class="answer-button" id="answerButton">默念问题、寻找答案</button>
+    <!-- 宇宙神秘背景 -->
+    <div class="meteor-shower">
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
     </div>
+    <div class="mystic-symbols">
+        <div class="symbol">☰</div>
+        <div class="symbol">☱</div>
+        <div class="symbol">☲</div>
+        <div class="symbol">☳</div>
+        <div class="symbol">☴</div>
+        <div class="symbol">☵</div>
+        <div class="symbol">☶</div>
+        <div class="symbol">☷</div>
+        <div class="symbol">☯</div>
+        <div class="symbol">☯</div>
+        <div class="symbol">♈</div>
+        <div class="symbol">♉</div>
+        <div class="symbol">♊</div>
+        <div class="symbol">♋</div>
+        <div class="symbol">⚝</div>
+        <div class="symbol">✦</div>
+        <div class="symbol">✧</div>
+        <div class="symbol">✵</div>
+    </div>
+    <div class="constellation">
+        <svg>
+            <g><circle class="constellation-star" cx="15%" cy="25%" r="2"/><circle class="constellation-star" cx="18%" cy="22%" r="2.5"/><circle class="constellation-star" cx="22%" cy="20%" r="2"/><circle class="constellation-star" cx="26%" cy="22%" r="2.5"/><circle class="constellation-star" cx="28%" cy="26%" r="2"/><circle class="constellation-star" cx="30%" cy="30%" r="2.5"/><circle class="constellation-star" cx="32%" cy="35%" r="2"/><path class="constellation-line" d="M 15% 25% L 18% 22% L 22% 20% L 26% 22% L 28% 26% L 30% 30% L 32% 35%"/></g>
+            <g><circle class="constellation-star" cx="70%" cy="40%" r="3"/><circle class="constellation-star" cx="75%" cy="38%" r="2"/><circle class="constellation-star" cx="72%" cy="45%" r="2.5"/><circle class="constellation-star" cx="77%" cy="47%" r="2"/><circle class="constellation-star" cx="74%" cy="52%" r="2.5"/><circle class="constellation-star" cx="70%" cy="50%" r="2"/><circle class="constellation-star" cx="68%" cy="45%" r="2"/><path class="constellation-line" d="M 70% 40% L 75% 38% M 70% 40% L 68% 45% M 72% 45% L 77% 47% M 72% 45% L 70% 50% M 74% 52% L 70% 50%"/></g>
+            <g><circle class="constellation-star" cx="40%" cy="15%" r="2"/><circle class="constellation-star" cx="45%" cy="18%" r="2.5"/><circle class="constellation-star" cx="50%" cy="14%" r="2"/><circle class="constellation-star" cx="55%" cy="19%" r="2.5"/><circle class="constellation-star" cx="60%" cy="16%" r="2"/><path class="constellation-line" d="M 40% 15% L 45% 18% L 50% 14% L 55% 19% L 60% 16%"/></g>
+        </svg>
+    </div>
+    <div class="deep-space-glow"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">☯</span>
+                <h1 class="logo-text">易经占卜</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">🏠 首页</a>
+                <a href="zhanbu.html" class="nav-link">🔮 占卜</a>
+                <a href="shoucang.html" class="nav-link">⭐ 收藏</a>
+                <a href="fenxiang.html" class="nav-link">📤 分享</a>
+            </nav>
+        </header>
 
-    <script>
-        // 答案语料库 - 50个不重复的答案
-        const answers = [
-            "当下困难、即将解决",
-            "心中的她、即将出现",
-            "坚持下去、必有回报",
-            "放下过去、拥抱未来",
-            "机会之门、即将打开",
-            "努力付出、终有收获",
-            "相信直觉、做出选择",
-            "保持耐心、好事将近",
-            "改变自己、影响他人",
-            "勇敢前行、不畏艰难",
-            "内心平静、外在顺利",
-            "珍惜当下、创造回忆",
-            "学习新知、提升自我",
-            "帮助他人、成就自己",
-            "面对恐惧、超越自我",
-            "保持乐观、一切向好",
-            "寻找平衡、生活和谐",
-            "追求梦想、永不放弃",
-            "接受现实、积极改变",
-            "感恩之心、带来幸福",
-            "把握机会、莫失良机",
-            "保持健康、才有一切",
-            "信任他人、建立关系",
-            "简化生活、专注重点",
-            "面对挑战、成长更快",
-            "保持好奇心、探索未知",
-            "学会放手、轻松前行",
-            "培养习惯、塑造人生",
-            "保持谦逊、持续进步",
-            "倾听内心、找到方向",
-            "团结合作、共创未来",
-            "勇于尝试、不怕失败",
-            "保持专注、提高效率",
-            "心怀善意、收获善意",
-            "设定目标、逐步实现",
-            "保持弹性、适应变化",
-            "欣赏自己、肯定价值",
-            "拥抱变化、迎接新生",
-            "保持希望、永不言弃",
-            "发现美好、享受生活",
-            "学会感恩、生活更甜",
-            "保持真诚、赢得信任",
-            "追求卓越、不断超越",
-            "保持冷静、理智应对",
-            "寻找快乐、传递快乐",
-            "保持开放、接受新事物",
-            "学会原谅、释放自己",
-            "保持热情、点燃生活",
-            "相信自己、你能做到",
-            "活在当下、感受幸福"
-        ];
-
-        // 获取DOM元素
-        const answerButton = document.getElementById('answerButton');
-        const answerContent = document.getElementById('answerContent');
-        const answerText = document.getElementById('answerText');
-        const explanationText = document.getElementById('explanationText');
-
-        // 初始状态 - 隐藏答案和解释
-        answerContent.style.opacity = '0';
-        explanationText.style.opacity = '0';
-
-        // 点击按钮事件
-        answerButton.addEventListener('click', function() {
-            // 按钮文本变化
-            answerButton.textContent = '答案生成中...';
-            answerButton.classList.add('pulse');
-            answerButton.disabled = true;
-
-            // 隐藏当前答案（如果有）
-            answerContent.classList.remove('fade-in');
-            answerContent.classList.add('fade-out');
-            explanationText.classList.remove('fade-in');
-            explanationText.classList.add('fade-out');
-
-            // 模拟思考时间
-            setTimeout(function() {
-                // 随机选择一个答案
-                const randomIndex = Math.floor(Math.random() * answers.length);
-                const randomAnswer = answers[randomIndex];
-                
-                // 更新答案文本
-                answerText.textContent = randomAnswer;
-                
-                // 显示答案和解释
-                setTimeout(function() {
-                    answerContent.classList.remove('fade-out');
-                    answerContent.classList.add('fade-in');
+        <main class="main-content">
+            <!-- 神秘封面 -->
+            <section class="hero-mystical">
+                <div class="mystical-bg">
+                    <!-- 漂浮粒子 -->
+                    <div class="particles">
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                    </div>
                     
-                    // 延迟显示解释
-                    setTimeout(function() {
-                        explanationText.classList.remove('fade-out');
-                        explanationText.classList.add('fade-in');
+                    <!-- 中心太极八卦 -->
+                    <div class="central-symbol">
+                        <div class="taiji-circle">
+                            <span class="taiji-icon">☯</span>
+                        </div>
+                        <div class="bagua-ring">
+                            <div class="bagua-item" style="--i: 0">☰</div>
+                            <div class="bagua-item" style="--i: 1">☱</div>
+                            <div class="bagua-item" style="--i: 2">☲</div>
+                            <div class="bagua-item" style="--i: 3">☳</div>
+                            <div class="bagua-item" style="--i: 4">☴</div>
+                            <div class="bagua-item" style="--i: 5">☵</div>
+                            <div class="bagua-item" style="--i: 6">☶</div>
+                            <div class="bagua-item" style="--i: 7">☷</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-overlay">
+                    <div class="hero-content-mystical">
+                        <h1 class="mystical-title">
+                            <span class="title-line">易经</span>
+                            <span class="title-line title-sub">六十四卦占卜</span>
+                        </h1>
+                        <p class="mystical-subtitle">
+                            <span class="subtitle-icon">✨</span>
+                            揭开天机 · 探索命运 · 指引迷津
+                            <span class="subtitle-icon">✨</span>
+                        </p>
+                        <p class="mystical-desc">
+                            古老东方智慧与现代科技融合，为您揭示生命之谜
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="zhanbu.html" class="btn-mystical btn-primary-mystical">
+                                <span class="btn-icon">🔮</span>
+                                <span>开启神灵指引</span>
+                            </a>
+                            <a href="#features" class="btn-mystical btn-secondary-mystical">
+                                <span>了解更多</span>
+                            </a>
+                        </div>
                         
-                        // 恢复按钮状态
-                        answerButton.textContent = '再问一次、获取新答案';
-                        answerButton.classList.remove('pulse');
-                        answerButton.disabled = false;
-                    }, 500);
-                }, 300);
-            }, 1500);
-        });
-    </script>
+                        <!-- 神秘符号装饰 -->
+                        <div class="mystical-decorations">
+                            <div class="deco-left">★</div>
+                            <div class="deco-right">★</div>
+                            <div class="deco-top">◆</div>
+                            <div class="deco-bottom">◆</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <h3 class="section-title">功能特色</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎲</div>
+                        <h4>传统起卦</h4>
+                        <p>采用三枚铜钱虚拟投掷法，还原古法占卜仪式感</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📖</div>
+                        <h4>详细解读</h4>
+                        <p>提供完整的卦辞、爻辞解释，深入理解卦象含义</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h4>AI分析</h4>
+                        <p>结合现代AI技术，为您提供个性化的建议和指导</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h4>记录保存</h4>
+                        <p>保存您的占卜历史，随时回顾查看卦象启示</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <h3 class="section-title">关于易经</h3>
+                <p class="about-text">
+                    《易经》是中国古代智慧的结晶，被誉为"群经之首"。通过六十四卦的变化，
+                    揭示宇宙万物的运行规律。占卜不是迷信，而是一种思考人生、探索未知的方式。
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 易经占卜网站 | 传承古老智慧，融合现代科技</p>
+        </footer>
+    </div>
 </body>
 </html>

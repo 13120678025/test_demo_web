@@ -1,0 +1,509 @@
+/* ========== Apple风格神秘封面 ========== */
+
+/* 神秘封面主容器 */
+.hero-mystical {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 80px 0;
+    background: transparent;
+}
+
+/* 多层渐变背景系统 */
+.mystical-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+        /* 顶部深紫渐变 */
+        radial-gradient(ellipse 900px 600px at 50% 0%, rgba(88, 28, 135, 0.25), transparent 70%),
+        /* 左侧蓝紫光晕 */
+        radial-gradient(ellipse 700px 800px at 0% 30%, rgba(59, 130, 246, 0.15), transparent 60%),
+        /* 右侧粉紫光晕 */
+        radial-gradient(ellipse 600px 700px at 100% 70%, rgba(219, 112, 147, 0.12), transparent 55%),
+        /* 底部橙金光晕 */
+        radial-gradient(ellipse 800px 400px at 50% 100%, rgba(255, 140, 0, 0.1), transparent 65%),
+        /* 中心深蓝渐变 */
+        radial-gradient(circle 1000px at 50% 50%, rgba(15, 23, 42, 0.95), #0a0e1a 100%);
+    animation: mystical-breathe 35s ease-in-out infinite;
+}
+
+@keyframes mystical-breathe {
+    0%, 100% { 
+        opacity: 0.85; 
+        transform: scale(1);
+    }
+    33% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+    66% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+/* 额外光效层 */
+.mystical-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle 300px at 30% 40%, rgba(138, 43, 226, 0.08), transparent),
+        radial-gradient(circle 400px at 70% 60%, rgba(255, 159, 10, 0.06), transparent);
+    animation: glow-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes glow-drift {
+    0% { transform: translate(0, 0); opacity: 0.6; }
+    100% { transform: translate(30px, -30px); opacity: 1; }
+}
+
+/* 粒子效果 - 增强版 */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: float-magical 28s infinite ease-in-out;
+    opacity: 0;
+}
+
+/* 不同颜色的粒子 */
+.particle:nth-child(1) { 
+    left: 10%; 
+    background: radial-gradient(circle, rgba(255, 159, 10, 0.9), rgba(255, 159, 10, 0.2)); 
+    animation-delay: 0s; 
+}
+.particle:nth-child(2) { 
+    left: 25%; 
+    background: radial-gradient(circle, rgba(191, 90, 242, 0.8), rgba(191, 90, 242, 0.2)); 
+    animation-delay: 5s; 
+}
+.particle:nth-child(3) { 
+    left: 60%; 
+    background: radial-gradient(circle, rgba(90, 200, 250, 0.8), rgba(90, 200, 250, 0.2)); 
+    animation-delay: 2s; 
+}
+.particle:nth-child(4) { 
+    left: 80%; 
+    background: radial-gradient(circle, rgba(255, 159, 10, 0.85), rgba(255, 159, 10, 0.2)); 
+    animation-delay: 7s; 
+}
+.particle:nth-child(5) { 
+    left: 40%; 
+    background: radial-gradient(circle, rgba(219, 112, 147, 0.8), rgba(219, 112, 147, 0.2)); 
+    animation-delay: 3s; 
+}
+.particle:nth-child(6) { 
+    left: 90%; 
+    background: radial-gradient(circle, rgba(191, 90, 242, 0.85), rgba(191, 90, 242, 0.2)); 
+    animation-delay: 9s; 
+}
+.particle:nth-child(7) { 
+    left: 15%; 
+    background: radial-gradient(circle, rgba(90, 200, 250, 0.9), rgba(90, 200, 250, 0.2)); 
+    animation-delay: 4s; 
+}
+.particle:nth-child(8) { 
+    left: 70%; 
+    background: radial-gradient(circle, rgba(255, 159, 10, 0.8), rgba(255, 159, 10, 0.2)); 
+    animation-delay: 6s; 
+}
+.particle:nth-child(9) { 
+    left: 35%; 
+    background: radial-gradient(circle, rgba(191, 90, 242, 0.9), rgba(191, 90, 242, 0.2)); 
+    animation-delay: 1s; 
+}
+.particle:nth-child(10) { 
+    left: 85%; 
+    background: radial-gradient(circle, rgba(90, 200, 250, 0.85), rgba(90, 200, 250, 0.2)); 
+    animation-delay: 8s; 
+}
+
+@keyframes float-magical {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+        transform: translateX(0) scale(0.6);
+        filter: blur(1px);
+    }
+    15% { 
+        opacity: 0.8; 
+        filter: blur(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(40px) scale(1.2);
+        filter: blur(0);
+    }
+    85% { 
+        opacity: 0.5; 
+        filter: blur(1px);
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(80px) scale(1.4);
+        filter: blur(2px);
+    }
+}
+
+/* 太极符号 */
+.central-symbol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    opacity: 0.04;
+    animation: symbol-float 30s ease-in-out infinite;
+}
+
+@keyframes symbol-float {
+    0%, 100% { 
+        opacity: 0.03;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+    50% { 
+        opacity: 0.06;
+        transform: translate(-50%, -50%) scale(1.05) rotate(10deg);
+    }
+}
+
+.taiji-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 159, 10, 0.05), transparent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate-slow 80s linear infinite;
+}
+
+@keyframes rotate-slow {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.taiji-icon {
+    font-size: 140px;
+    background: linear-gradient(135deg, rgba(255, 159, 10, 0.4), rgba(191, 90, 242, 0.3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(255, 159, 10, 0.2));
+}
+
+.bagua-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate-slow 120s linear infinite reverse;
+}
+
+.bagua-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 28px;
+    color: rgba(255, 159, 10, 0.3);
+    text-shadow: 0 0 20px rgba(255, 159, 10, 0.2);
+    animation: item-pulse 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.8s);
+}
+
+.bagua-item:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-200px); }
+.bagua-item:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateY(-200px); }
+.bagua-item:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateY(-200px); }
+.bagua-item:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateY(-200px); }
+.bagua-item:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateY(-200px); }
+.bagua-item:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateY(-200px); }
+.bagua-item:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateY(-200px); }
+.bagua-item:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateY(-200px); }
+
+@keyframes item-pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+/* 内容区 */
+.hero-overlay {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.hero-content-mystical {
+    animation: fade-in 1.2s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 标题 */
+.mystical-title {
+    margin-bottom: 32px;
+}
+
+.title-line {
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, 
+        #ff9f0a 0%, 
+        #bf5af2 30%,
+        #ff6b9d 60%,
+        #5ac8fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: title-shimmer 12s ease-in-out infinite;
+    background-size: 300% auto;
+    filter: drop-shadow(0 8px 40px rgba(255, 159, 10, 0.4));
+    margin-bottom: 16px;
+}
+
+@keyframes title-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+}
+
+.title-sub {
+    font-size: 36px;
+    letter-spacing: 0.2em;
+    opacity: 0.85;
+}
+
+@keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 副标题 */
+.mystical-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    letter-spacing: 0.15em;
+    animation: fade-in 1.2s ease-out 0.3s both;
+}
+
+.subtitle-icon {
+    display: inline-block;
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 描述 */
+.mystical-desc {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    animation: fade-in 1.2s ease-out 0.6s both;
+}
+
+/* 按钮组 */
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fade-in 1.2s ease-out 0.9s both;
+}
+
+.btn-mystical {
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.02em;
+}
+
+.btn-primary-mystical {
+    background: linear-gradient(135deg, #ff9f0a 0%, #bf5af2 100%);
+    color: white;
+    border: none;
+    box-shadow: 
+        0 8px 32px rgba(255, 159, 10, 0.5),
+        0 0 48px rgba(191, 90, 242, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary-mystical::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.btn-primary-mystical:hover::before {
+    transform: translateX(100%);
+}
+
+.btn-primary-mystical:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 16px 48px rgba(255, 159, 10, 0.6);
+}
+
+.btn-secondary-mystical {
+    background: rgba(44, 44, 46, 0.72);
+    backdrop-filter: blur(40px);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-secondary-mystical:hover {
+    background: rgba(58, 58, 60, 0.82);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.btn-icon {
+    font-size: 22px;
+    animation: icon-float 3s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* 装饰符号 */
+.mystical-decorations {
+    position: absolute;
+    inset: -80px;
+    pointer-events: none;
+}
+
+.mystical-decorations > div {
+    position: absolute;
+    font-size: 32px;
+    color: rgba(255, 159, 10, 0.15);
+    animation: deco-float 8s ease-in-out infinite;
+}
+
+.deco-left {
+    left: 5%;
+    top: 50%;
+    animation-delay: 0s;
+}
+
+.deco-right {
+    right: 5%;
+    top: 50%;
+    animation-delay: 2s;
+}
+
+.deco-top {
+    left: 50%;
+    top: 15%;
+    animation-delay: 1s;
+}
+
+.deco-bottom {
+    left: 50%;
+    bottom: 15%;
+    animation-delay: 3s;
+}
+
+@keyframes deco-float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+        opacity: 0.25;
+    }
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .hero-mystical {
+        margin: -52px -16px 0 -16px;
+        padding: 60px 16px;
+    }
+    
+    .central-symbol {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .title-line {
+        font-size: 40px;
+    }
+    
+    .title-sub {
+        font-size: 22px;
+        letter-spacing: 0.1em;
+    }
+    
+    .mystical-subtitle {
+        font-size: 16px;
+    }
+    
+    .mystical-desc {
+        font-size: 15px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-mystical {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .mystical-decorations {
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "yijing-divination",
+  "version": "3.7.0",
+  "description": "易经六十四卦占卜网站 - 传统智慧的现代呈现",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": [
+    "易经",
+    "占卜",
+    "I-Ching",
+    "divination",
+    "六十四卦"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享占卜 - 易经占卜</title>
+    <link rel="stylesheet" href="styles-apple-mystical.css">
+    <link rel="stylesheet" href="cosmic-bg.css">
+</head>
+<body>
+    <!-- 宇宙神秘背景 -->
+    <div class="meteor-shower"><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div></div>
+    <div class="mystic-symbols"><div class="symbol">☰</div><div class="symbol">☴</div><div class="symbol">☯</div><div class="symbol">✦</div></div>
+    <div class="deep-space-glow"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">☯</span>
+                <h1 class="logo-text">易经占卜</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">🏠 首页</a>
+                <a href="zhanbu.html" class="nav-link">🔮 占卜</a>
+                <a href="shoucang.html" class="nav-link">⭐ 收藏</a>
+                <a href="fenxiang.html" class="nav-link active">📤 分享</a>
+            </nav>
+        </header>
+
+        <main class="share-container">
+            <h2 class="page-title">📤 分享占卜结果</h2>
+
+            <div id="shareContent" class="share-content">
+                <div class="share-preview" id="sharePreview">
+                    <!-- 分享预览内容 -->
+                    <div class="share-card">
+                        <h3>请先完成占卜</h3>
+                        <p>您还没有可以分享的占卜结果</p>
+                        <a href="zhanbu.html" class="btn-primary">开始占卜</a>
+                    </div>
+                </div>
+
+                <div id="shareOptions" class="share-options" style="display: none;">
+                    <h3>分享方式</h3>
+                    <div class="share-buttons">
+                        <button id="copyLinkBtn" class="share-btn">
+                            <span class="share-icon">🔗</span>
+                            <span>复制链接</span>
+                        </button>
+                        <button id="downloadImageBtn" class="share-btn">
+                            <span class="share-icon">📷</span>
+                            <span>保存图片</span>
+                        </button>
+                        <button id="shareWechatBtn" class="share-btn">
+                            <span class="share-icon">💬</span>
+                            <span>微信分享</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="share-instructions">
+                <h3>分享说明</h3>
+                <ul>
+                    <li>复制链接：生成可分享的链接，发送给朋友查看</li>
+                    <li>保存图片：将占卜结果保存为图片，方便分享到社交平台</li>
+                    <li>微信分享：生成二维码，扫描即可查看占卜结果</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 易经占卜网站 | 传承古老智慧，融合现代科技</p>
+        </footer>
+    </div>
+
+    <script src="hexagram-data.js"></script>
+    <script src="share.js"></script>
+</body>
+</html>

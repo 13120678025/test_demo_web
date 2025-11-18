@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开始占卜 - 易经占卜</title>
+    <link rel="stylesheet" href="styles-apple-mystical.css">
+    <link rel="stylesheet" href="cosmic-bg.css">
+</head>
+<body>
+    <!-- 宇宙神秘背景 -->
+    <div class="meteor-shower"><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div></div>
+    <div class="mystic-symbols"><div class="symbol">☰</div><div class="symbol">☱</div><div class="symbol">☲</div><div class="symbol">☳</div><div class="symbol">☴</div><div class="symbol">☵</div><div class="symbol">☶</div><div class="symbol">☷</div><div class="symbol">☯</div><div class="symbol">☯</div><div class="symbol">♈</div><div class="symbol">♉</div><div class="symbol">♊</div><div class="symbol">♋</div><div class="symbol">⚝</div><div class="symbol">✦</div><div class="symbol">✧</div><div class="symbol">✵</div></div>
+    <div class="constellation"><svg><g><circle class="constellation-star" cx="15%" cy="25%" r="2"/><circle class="constellation-star" cx="22%" cy="20%" r="2"/><path class="constellation-line" d="M 15% 25% L 22% 20% L 30% 30%"/></g></svg></div>
+    <div class="deep-space-glow"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">☯</span>
+                <h1 class="logo-text">易经占卜</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">🏠 首页</a>
+                <a href="zhanbu.html" class="nav-link active">🔮 占卜</a>
+                <a href="shoucang.html" class="nav-link">⭐ 收藏</a>
+                <a href="fenxiang.html" class="nav-link">📤 分享</a>
+            </nav>
+        </header>
+
+        <main class="divination-container">
+            <div class="divination-panel">
+                <h2 class="panel-title">🎴 易经六十四卦占卜</h2>
+                
+                <!-- 准备阶段 -->
+                <div id="prepareSection" class="prepare-section">
+                    <div class="ritual-icon">☯</div>
+                    <h3 class="ritual-title">✨ 心诚则灵</h3>
+                    <div class="ritual-steps">
+                        <p class="ritual-step">🕯️ 请静心凝神，排除杂念</p>
+                        <p class="ritual-step">🙏 在心中虔诚默念您的问题</p>
+                        <p class="ritual-step">✨ 保持恭敬之心，方能得到指引</p>
+                    </div>
+                    <button id="prepareBtn" class="btn-primary ritual-btn">✅ 我已准备好</button>
+                </div>
+
+                <!-- 问题输入阶段 -->
+                <div id="questionSection" class="question-section" style="display: none;">
+                    <div class="question-guide">
+                        <p class="guide-text">📿 请选择或输入您的占卜问题</p>
+                        <p class="guide-hint">（建议选择预设问题或输入明确具体的问题）</p>
+                    </div>
+                    
+                    <!-- 预设问题选项 -->
+                    <div class="preset-questions">
+                        <button class="preset-btn" data-question="我最近的感情运势如何？">💕 感情运势</button>
+                        <button class="preset-btn" data-question="我的事业发展方向是什么？">💼 事业发展</button>
+                        <button class="preset-btn" data-question="这次投资/决策是否明智？">💰 财运决策</button>
+                        <button class="preset-btn" data-question="我当前面临的困境如何化解？">🔮 困境化解</button>
+                        <button class="preset-btn" data-question="我和某人的关系会如何发展？">👥 人际关系</button>
+                        <button class="preset-btn" data-question="未来一个月我需要注意什么？">⏰ 近期运势</button>
+                    </div>
+                    
+                    <div class="divider">
+                        <span>或者</span>
+                    </div>
+                    
+                    <textarea id="questionInput" class="question-input" placeholder="输入您的自定义问题..."></textarea>
+                    <button id="startBtn" class="btn-primary">🎯 开始起卦</button>
+                </div>
+
+                <!-- 投币阶段 -->
+                <div id="coinSection" class="coin-section" style="display: none;">
+                    <div class="ritual-header">
+                        <p class="instruction-main">🎲 六爻占卜 · 投掷铜钱</p>
+                        <p class="instruction-sub" id="throwGuide">请静心凝神，点击按钮投掷第一爻</p>
+                    </div>
+                    <div class="throw-progress">
+                        <span id="throwCount">第 1 次投掷</span>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="coin-display" id="coinDisplay">
+                        <div class="coin coin-interactive" data-index="0" title="点击投掷铜钱">
+                            <img src="images/coin-qianlong-front.svg" class="coin-img" alt="乾隆通宝">
+                            <div class="coin-glow"></div>
+                        </div>
+                        <div class="coin coin-interactive" data-index="1" title="点击投掷铜钱">
+                            <img src="images/coin-qianlong-front.svg" class="coin-img" alt="乾隆通宝">
+                            <div class="coin-glow"></div>
+                        </div>
+                        <div class="coin coin-interactive" data-index="2" title="点击投掷铜钱">
+                            <img src="images/coin-qianlong-front.svg" class="coin-img" alt="乾隆通宝">
+                            <div class="coin-glow"></div>
+                        </div>
+                    </div>
+                    
+                    <button id="throwBtn" class="btn-primary btn-throw">
+                        <span class="throw-icon">🪙</span>
+                        <span id="throwBtnText">投掷铜钱</span>
+                    </button>
+                    <p class="throw-hint" id="throwHint">* 每一爻都承载着天地之意，请用心感受</p>
+                    
+                    <div class="lines-display">
+                        <div class="line-item" id="line6">六爻: <span>-</span></div>
+                        <div class="line-item" id="line5">五爻: <span>-</span></div>
+                        <div class="line-item" id="line4">四爻: <span>-</span></div>
+                        <div class="line-item" id="line3">三爻: <span>-</span></div>
+                        <div class="line-item" id="line2">二爻: <span>-</span></div>
+                        <div class="line-item" id="line1">初爻: <span>-</span></div>
+                    </div>
+                </div>
+
+                <div id="resultSection" class="result-section" style="display: none;">
+                    <h3 class="result-title">🎯 占卜结果</h3>
+                    
+                    <div class="hexagram-display">
+                        <div class="hexagram-column">
+                            <h4>本卦</h4>
+                            <div id="originalHexagram" class="hexagram-lines"></div>
+                            <p id="originalName" class="hexagram-name"></p>
+                        </div>
+                        <div class="hexagram-arrow">→</div>
+                        <div class="hexagram-column" id="changedHexagramColumn" style="display: none;">
+                            <h4>变卦</h4>
+                            <div id="changedHexagram" class="hexagram-lines"></div>
+                            <p id="changedName" class="hexagram-name"></p>
+                        </div>
+                    </div>
+
+                    <div class="interpretation">
+                        <h4>📜 卦辞解读</h4>
+                        <div id="interpretation" class="interpretation-text"></div>
+                        
+                        <h4>📿 爻辞详解</h4>
+                        <div id="lineInterpretation" class="interpretation-text"></div>
+                    </div>
+
+                    <div class="ai-analysis" id="aiAnalysisSection">
+                        <h4>🤖 AI智能分析</h4>
+                        <button id="getAIAnalysis" class="btn-secondary">🤖 获取AI分析</button>
+                        <div id="aiResult" class="ai-result" style="display: none;"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="saveBtn" class="btn-secondary">💾 保存结果</button>
+                        <button id="resetBtn" class="btn-primary">🔄 重新占卜</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 易经占卜网站 | 传承古老智慧，融合现代科技</p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="hexagram-data.js"></script>
+    <script src="ai-analysis.js"></script>
+    <script src="divination.js"></script>
+</body>
+</html>
