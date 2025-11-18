@@ -1,5 +1,5 @@
 # 配置文件（包含敏感信息）
-config.js
+# config.js  # 已注释，允许上传到Vercel
 
 # 依赖
 node_modules/
