@@ -28,9 +28,9 @@
 - [ ] DEPLOYMENT.md
 
 ## ✅ 图片文件夹
-- [ ] images/coin-qianlong-front.svg
-- [ ] images/coin-qianlong-back.svg
-- [ ] images/（其他SVG文件）
+- [ ] coin-qianlong-front.svg
+- [ ] coin-qianlong-back.svg
+- [ ]（其他SVG文件）
 
 ## ❌ 不要上传
 - [ ] config.js （包含真实API Key）
@@ -67,3 +67,4 @@ vercel --prod
 ---
 
 **总文件数**: 约 18-20 个文件（不含images内的多个SVG）
+
